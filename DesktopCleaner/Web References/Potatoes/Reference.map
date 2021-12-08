@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://srd-apps-dev/distrep_ws/n_distrep_ws.asmx?disco" filename="n_distrep_ws.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://srd-apps-dev/distrep_ws/n_distrep_ws.asmx?wsdl" filename="n_distrep_ws.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

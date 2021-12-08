@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopCleaner", "DesktopCleaner\DesktopCleaner.csproj", "{BD4FFE25-3083-4DB7-8252-B64333E95A1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD4FFE25-3083-4DB7-8252-B64333E95A1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD4FFE25-3083-4DB7-8252-B64333E95A1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD4FFE25-3083-4DB7-8252-B64333E95A1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD4FFE25-3083-4DB7-8252-B64333E95A1E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1208E461-8E8A-448D-8FB7-106B4ED7DFA5}
+	EndGlobalSection
+EndGlobal

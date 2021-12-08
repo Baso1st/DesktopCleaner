@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempurl.org" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempurl.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempurl.org">
+      <s:element name="log_error">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="as_message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="log_errorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="log_errorResult" type="tns:s_rep_return" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="s_rep_return">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="return_code" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="return_message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="blob_data" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="run_distrep">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="al_report_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="as_format_extension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="as_args" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="as_arg_types" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="run_distrepResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="run_distrepResult" type="tns:s_rep_return" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="run_distrep_ext">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="al_report_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="as_output_extension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="as_args" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="as_arg_types" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="ab_dev_mode" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="run_distrep_extResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="run_distrep_extResult" type="tns:s_rep_return" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="run_distrep_with_env">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="al_report_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="as_output_extension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="as_args" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="as_arg_types" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="as_environment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="run_distrep_with_envResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="run_distrep_with_envResult" type="tns:s_rep_return" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="log_errorSoapIn">
+    <wsdl:part name="parameters" element="tns:log_error" />
+  </wsdl:message>
+  <wsdl:message name="log_errorSoapOut">
+    <wsdl:part name="parameters" element="tns:log_errorResponse" />
+  </wsdl:message>
+  <wsdl:message name="run_distrepSoapIn">
+    <wsdl:part name="parameters" element="tns:run_distrep" />
+  </wsdl:message>
+  <wsdl:message name="run_distrepSoapOut">
+    <wsdl:part name="parameters" element="tns:run_distrepResponse" />
+  </wsdl:message>
+  <wsdl:message name="run_distrep_extSoapIn">
+    <wsdl:part name="parameters" element="tns:run_distrep_ext" />
+  </wsdl:message>
+  <wsdl:message name="run_distrep_extSoapOut">
+    <wsdl:part name="parameters" element="tns:run_distrep_extResponse" />
+  </wsdl:message>
+  <wsdl:message name="run_distrep_with_envSoapIn">
+    <wsdl:part name="parameters" element="tns:run_distrep_with_env" />
+  </wsdl:message>
+  <wsdl:message name="run_distrep_with_envSoapOut">
+    <wsdl:part name="parameters" element="tns:run_distrep_with_envResponse" />
+  </wsdl:message>
+  <wsdl:portType name="n_distrep_wsSoap">
+    <wsdl:operation name="log_error">
+      <wsdl:input message="tns:log_errorSoapIn" />
+      <wsdl:output message="tns:log_errorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="run_distrep">
+      <wsdl:input message="tns:run_distrepSoapIn" />
+      <wsdl:output message="tns:run_distrepSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="run_distrep_ext">
+      <wsdl:input message="tns:run_distrep_extSoapIn" />
+      <wsdl:output message="tns:run_distrep_extSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="run_distrep_with_env">
+      <wsdl:input message="tns:run_distrep_with_envSoapIn" />
+      <wsdl:output message="tns:run_distrep_with_envSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="n_distrep_wsSoap" type="tns:n_distrep_wsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="log_error">
+      <soap:operation soapAction="http://tempurl.org/log_error" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="run_distrep">
+      <soap:operation soapAction="http://tempurl.org/run_distrep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="run_distrep_ext">
+      <soap:operation soapAction="http://tempurl.org/run_distrep_ext" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="run_distrep_with_env">
+      <soap:operation soapAction="http://tempurl.org/run_distrep_with_env" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="n_distrep_wsSoap12" type="tns:n_distrep_wsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="log_error">
+      <soap12:operation soapAction="http://tempurl.org/log_error" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="run_distrep">
+      <soap12:operation soapAction="http://tempurl.org/run_distrep" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="run_distrep_ext">
+      <soap12:operation soapAction="http://tempurl.org/run_distrep_ext" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="run_distrep_with_env">
+      <soap12:operation soapAction="http://tempurl.org/run_distrep_with_env" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="n_distrep_ws">
+    <wsdl:port name="n_distrep_wsSoap" binding="tns:n_distrep_wsSoap">
+      <soap:address location="http://srd-apps-dev/distrep_ws/n_distrep_ws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="n_distrep_wsSoap12" binding="tns:n_distrep_wsSoap12">
+      <soap12:address location="http://srd-apps-dev/distrep_ws/n_distrep_ws.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
